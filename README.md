@@ -1,10 +1,10 @@
 # Blender Controls
 
-If you had to struggle with the mouse controls and you know Blender, this is easier to handle as it now allows Blender style Mouse control
+If you had to struggle with the mouse controls and you know Blender, this is easier to handle as it now allows Blender's way of mouse object control.
 
 # Todo
 
-Hold Shift and middle mouse button while moving pans left right, but not up down.
+Holding shift and the middle mouse button while moving pans left/right, but not up/down.
 
 # splat
 
