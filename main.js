@@ -968,30 +968,27 @@ async function main() {
                     ? innerHeight
                     : 1;
             let inv = invert4(viewMatrix);
-            if (e.shiftKey) {
+            if (e.ctrlKey) {
                 inv = translate4(
                     inv,
                     (e.deltaX * scale) / innerWidth,
                     (e.deltaY * scale) / innerHeight,
                     0,
                 );
-            } else if (e.ctrlKey || e.metaKey) {
-                // inv = rotate4(inv,  (e.deltaX * scale) / innerWidth,  0, 0, 1);
-                // inv = translate4(inv,  0, (e.deltaY * scale) / innerHeight, 0);
-                // let preY = inv[13];
+            } else if (e.shiftKey) {
+                inv = translate4(
+                    inv,
+                    0, //(e.deltaX * scale) / innerWidth,
+                    0, //(e.deltaY * scale) / innerHeight,
+                    0,
+                );
+            } else {
                 inv = translate4(
                     inv,
                     0,
                     0,
-                    (-10 * (e.deltaY * scale)) / innerHeight,
+                    (-1 * (e.deltaY * scale)) / innerHeight,
                 );
-                // inv[13] = preY;
-            } else {
-                let d = 4;
-                inv = translate4(inv, 0, 0, d);
-                inv = rotate4(inv, -(e.deltaX * scale) / innerWidth, 0, 1, 0);
-                inv = rotate4(inv, (e.deltaY * scale) / innerHeight, 1, 0, 0);
-                inv = translate4(inv, 0, 0, -d);
             }
 
             viewMatrix = invert4(inv);
@@ -1005,7 +1002,7 @@ async function main() {
         e.preventDefault();
         startX = e.clientX;
         startY = e.clientY;
-        down = e.ctrlKey || e.metaKey ? 2 : 1;
+        down = e.shiftKey || e.metaKey ? 2 : 1;
     });
     canvas.addEventListener("contextmenu", (e) => {
         carousel = false;
@@ -1179,16 +1176,17 @@ async function main() {
     const frame = (now) => {
         let inv = invert4(viewMatrix);
         let shiftKey = activeKeys.includes("Shift") || activeKeys.includes("ShiftLeft") || activeKeys.includes("ShiftRight")
+		let ctrlKey = activeKeys.includes("Ctrl") || activeKeys.includes("CtrlLeft") || activeKeys.includes("CtrlRight")
 
         if (activeKeys.includes("ArrowUp")) {
-            if (shiftKey) {
+            if (ctrlKey) {
                 inv = translate4(inv, 0, -0.03, 0);
             } else {
                 inv = translate4(inv, 0, 0, 0.1);
             }
         }
         if (activeKeys.includes("ArrowDown")) {
-            if (shiftKey) {
+            if (ctrlKey) {
                 inv = translate4(inv, 0, 0.03, 0);
             } else {
                 inv = translate4(inv, 0, 0, -0.1);
