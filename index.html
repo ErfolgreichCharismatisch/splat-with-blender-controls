@@ -192,12 +192,12 @@
 			if(location.host.includes('hf.space')) document.body.classList.add('nohf');
 		</script>
 		<div id="info">
-			<h3 class="nohf">WebGL 3D Gaussian Splat Viewer</h3>
+			<h3 class="nohf">WebGL 3D Gaussian Splat Viewer with Blender Controls</h3>
 			<p>
 			<small class="nohf">
-				By <a href="https://twitter.com/antimatter15">Kevin Kwok</a>.
+				By <a href="https://twitter.com/antimatter15">Kevin Kwok</a>, modded with Blender controls by <a href="https://github.com/ErfolgreichCharismatisch">ErfolgreichCharismatisch</a>.
 				Code on
-				<a href="https://github.com/antimatter15/splat">Github</a
+				<a href="https://github.com/ErfolgreichCharismatisch/splat-with-blender-controls">Github</a
 				>.
 			</small>
 		</p>
@@ -205,7 +205,16 @@
 			<details>
 			<summary>Use mouse or arrow keys to navigate.</summary>
 
-<div id="instructions">movement (arrow keys)
+<div id="instructions">
+mouse(Blender style)
+- Hold Shift and middle mouse button while moving -> Pan
+- Mouse Wheel -> Zoom(smoother)
+- Hold middle mouse button and move -> Rotate
+
+
+
+Original code:
+movement (arrow keys)
 - left/right arrow keys to strafe side to side
 - up/down arrow keys to move forward/back
 - space to jump
@@ -222,9 +231,8 @@ trackpad
 - ctrl key + scroll to move forward/back
 - shift + scroll to move up/down or strafe
 
-mouse
-- click and drag to orbit
-- right click (or ctrl/cmd key) and drag up/down to move
+
+
 
 touch (mobile)
 - one finger to orbit
