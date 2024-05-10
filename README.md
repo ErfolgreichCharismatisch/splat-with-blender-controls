@@ -20,6 +20,11 @@ https://github.com/antimatter15/splat/assets/30054/878d5d34-e0a7-4336-85df-111ff
 
 ## controls
 
+mouse(Blender style)
+- Hold Shift and middle mouse button while moving -> Pan
+- Mouse Wheel -> Zoom(smoother)
+- Hold middle mouse button and move -> Rotate
+
 movement (arrow keys)
 
 - left/right arrow keys to strafe side to side
@@ -40,11 +45,6 @@ trackpad
 - ctrl key + scroll up/down to move forward/back
 - shift + scroll up/down to move up/down
 - shift + scroll left/right to strafe side to side
-
-mouse
-- click and drag to orbit
-- right click (or ctrl/cmd key) and drag up/down to move forward/back
-- right click (or ctrl/cmd key) and drag left/right to strafe side to side
 
 touch (mobile)
 - one finger to orbit
