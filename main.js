@@ -978,8 +978,8 @@ async function main() {
             } else if (e.shiftKey) {
                 inv = translate4(
                     inv,
-                    0, //(e.deltaX * scale) / innerWidth,
-                    0, //(e.deltaY * scale) / innerHeight,
+                    (e.deltaX * scale) / innerWidth,
+                    (e.deltaY * scale) / innerHeight,
                     0,
                 );
             } else {
@@ -987,7 +987,7 @@ async function main() {
                     inv,
                     0,
                     0,
-                    (-1 * (e.deltaY * scale)) / innerHeight,
+                    (-8 * (e.deltaY * scale)) / innerHeight,
                 );
             }
 
@@ -1037,9 +1037,9 @@ async function main() {
             // let preY = inv[13];
             inv = translate4(
                 inv,
-                (-10 * (e.clientX - startX)) / innerWidth,
+                (-8 * (e.clientX - startX)) / innerWidth,
+                (-8 * (e.clientY - startY)) / innerHeight,
                 0,
-                (10 * (e.clientY - startY)) / innerHeight,
             );
             // inv[13] = preY;
             viewMatrix = invert4(inv);
