@@ -4,7 +4,7 @@ If you had to struggle with the mouse controls and you know Blender, this is eas
 
 # Todo
 
-- [x] Holding shift and the middle mouse button while moving pans left/right, but not up/down.
+- [x] Holding shift and the middle mouse button while moving pans left/right, but not up/down. Done.
 
 # splat
 
